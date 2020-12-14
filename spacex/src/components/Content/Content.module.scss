@@ -1,0 +1,41 @@
+.Content {
+    position: relative;
+    top: 5em;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media(min-width: 768px) {
+        flex-wrap: nowrap;
+        padding: 2.5em;
+    }
+    .Img {
+        width: 82vw;
+        height: 98vw;
+        @media(min-width: 768px) {
+            padding-top: 2.5em;
+            width: 38vw;
+            height: 50vw;
+        }
+    }
+    .List {
+        width: 90vw;
+        padding-top: 2.5em;
+        @media(min-width: 768px) {
+            width: 50vw;
+            padding-top: 0;
+            padding-left: 1em;
+        }
+        .Filter {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .Button {
+                margin: 0.5em;
+            }
+        }
+        .Data {
+            text-align: center;
+        }
+    }
+}
