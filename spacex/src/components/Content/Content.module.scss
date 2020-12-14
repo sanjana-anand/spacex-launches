@@ -18,24 +18,4 @@
             height: 50vw;
         }
     }
-    .List {
-        width: 90vw;
-        padding-top: 2.5em;
-        @media(min-width: 768px) {
-            width: 50vw;
-            padding-top: 0;
-            padding-left: 1em;
-        }
-        .Filter {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            .Button {
-                margin: 0.5em;
-            }
-        }
-        .Data {
-            text-align: center;
-        }
-    }
 }

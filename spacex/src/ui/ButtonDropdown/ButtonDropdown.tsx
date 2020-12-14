@@ -2,12 +2,19 @@ import React from "react";
 import Button from "../Button/Button";
 import DropDownCard from "../DropDownCard/DropDownCard";
 
-const ButtonDropDown = (props: any) => {
+interface ButtonDropdownProps {
+  data: string[],
+  selected: string,
+  icon:string,
+  iconText: string,
+  filterByYear: (year: string) => void,
+}
+
+const ButtonDropDown = (props: ButtonDropdownProps) => {
   const [open, setOpen] = React.useState<Boolean>(false);
-  const [year, setYear] = React.useState<String>('All');
-  let dropDownRef: any = null;
+  let dropDownRef = React.useRef<HTMLDivElement>(null);
   function handleClick(e: any) {
-    if (dropDownRef && !dropDownRef.contains(e.target) && open) {
+    if (dropDownRef.current !== null && !dropDownRef.current.contains(e.target) && open) {
       setOpen(false);
     }
   }
@@ -18,15 +25,10 @@ const ButtonDropDown = (props: any) => {
     };
   });
   return (
-    <div
-        ref={(element) => { 
-            dropDownRef = element
-        }}
-    >
+    <div ref={dropDownRef} >
       <Button onButtonClick={() => setOpen(open => !open)} icon={props.icon} iconText={props.iconText}> Filter by Year </Button>
-      {open && <DropDownCard data={props.data} selectedYear={year} setSelectedYear={(year: string) => { 
+      {open && <DropDownCard data={props.data} selectedYear={props.selected} setSelectedYear={(year: string) => { 
           setOpen(false);
-          setYear(year);
           props.filterByYear(year);
           }} />}
     </div>

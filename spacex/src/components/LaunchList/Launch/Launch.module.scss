@@ -1,0 +1,38 @@
+.Number {
+    font-size: 2.5em;
+    font-weight: 500;
+    width: 20%;
+}
+.Name {
+    font-weight: 500;
+    text-align: start;
+    width: 50%;
+    height: 100%;
+    font-size: 2em;
+    overflow: auto;
+    line-height: 100%;
+    display: flex;
+    padding-left: 0.5em;
+    align-items: center;
+    span {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+.Description {
+    width: 30%;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    .Date {
+        width: 100%;
+        font-size: 1em;
+    }
+    .Rocket {
+        font-weight: bold;
+        font-size: 1.5em;
+        line-height: 100%;
+    }
+}

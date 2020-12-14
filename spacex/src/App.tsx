@@ -1,10 +1,10 @@
 import React from 'react';
-import Content from './components/Content/Content';
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <div>
-      <Content/>
+      <Layout/>
     </div>
   );
 }

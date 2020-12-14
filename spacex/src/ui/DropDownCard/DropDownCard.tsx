@@ -1,12 +1,18 @@
 import React from 'react';
 import classes from './DropDownCard.module.scss';
 
-const DropDownCard = (props: any) => {
+interface ButtonDropdownProps {
+    data: string[],
+    selectedYear: string,
+    setSelectedYear: (year: string) => void,
+  }
+  
+const DropDownCard = (props: ButtonDropdownProps) => {
   return (
         <div className={classes.Card}>
             <ul>
-                {props.data.map((year: string, index: number) => (
-                    <li key={year} className={year !== 'All' && year === props.selectedYear ? classes.Selected : ''} onClick={() => props.setSelectedYear(year)}>{year}</li>
+                {props.data.map((year: string) => (
+                    <li key={year} className={year === props.selectedYear ? classes.Selected : ''} onClick={() => props.setSelectedYear(year)}>{year}</li>
                 ))}
             </ul>
         </div> 
